@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- My CSS -->
+    <link rel="stylesheet" href="styles_index.css">
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro&display=swap" rel="stylesheet">
+
+    <title>Login</title>
+
+</head>
+
+<body class="hero-image">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-sm">
+        <!-- Logo -->
+        <div id="ilslogo">
+            <ul class="navigation">
+                <li>
+                    <a class="navbar-brand" href="https://ilandsound.ee/">
+                        <img src="ILS2017.gif" alt="ilandsound-logo"></a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Loginform on mob -->
+        <div class="align-self-center ml-auto" id="lgnbtn">
+            <div class="container2" style="display: none" id="onlymob">
+                <div class="row justify-content-xs-center">
+                    <form action="/action_page.php" id="lgform_mob">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="usr2" placeholder="KASUTAJANIMI">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="pwd2" placeholder="PAROOL">
+                        </div>
+                        <button type="submit" id="submitbtn">KINNITAN</button>
+                    </form>
+                </div>
+            </div>
+            <!--  Loginbutton for all devices -->
+            <button class="slide-toggle" style="display: block" onclick="showFunction()" type="button" value="Submit" id="btnsltgl">LOGIN</button>
+        </div>
+    </nav>
+
+    <!--  Loginform on web -->
+    <div class="container" style="display: none" id="lgn-page">
+        <div class="row justify-content-lg-center mt-5">
+            <form action="/action_page.php" id="lgform">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="usr" placeholder="KASUTAJANIMI">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="pwd" placeholder="PAROOL">
+                </div>
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox"> Jäta mind meelde
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-secondary">KINNITAN</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function showFunction() {
+            var x = document.getElementById("lgn-page");
+            var y = document.getElementById("btnsltgl");
+            var z = document.getElementById("onlymob");
+            if (window.matchMedia("(max-width: 600px)").matches) {
+                z.style.display = "block";
+                y.style.display = "none";
+            } else {
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            }
+        }
+    </script>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
